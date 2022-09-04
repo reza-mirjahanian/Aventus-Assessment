@@ -1,0 +1,36 @@
+{
+  "name": "reza-mirjahanian",
+  "version": "1.0.0",
+  "description": "task",
+  "main": "src",
+  "scripts": {
+    "start": "node src 5",
+    "start-dev": "nodemon --watch src  src 5",
+    "test-dev": "nodemon --watch ./test --watch src  -x npm run test",
+    "test": "cross-env NODE_ENV='test' node ./node_modules/mocha/bin/mocha  --ui tdd  --timeout=10000 --exit ./test/**/*.spec.js",
+    "coverage": "cross-env NODE_ENV='test' node_modules/nyc/bin/nyc.js   npm run test",
+    "format:check": "npx prettier --check .",
+    "format:write": "npx prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Reza Mirjahanian <rmirjahanian@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "7.0.3",
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "eslint": "7.30.0",
+    "mocha": "9.0.2",
+    "nyc": "14.1.1",
+    "prettier": "2.7.1",
+    "sinon": "11.1.1",
+    "sinon-chai": "3.7.0",
+    "nodemon": "2.0.13"
+  }
+}
